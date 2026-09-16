@@ -728,3 +728,313 @@ footer strong {
         font-size: 32px;
     }
 }
+```css
+/* =================================================
+   SMART LOCATION
+   ================================================= */
+
+.location-section {
+    background: #f5f7fb;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.location-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.location-card:hover {
+    transform: translateY(-7px);
+}
+
+.location-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.location-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.location-card p {
+    color: #667085;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.location-btn {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.location-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* =================================================
+   LIVE LOCATION
+   ================================================= */
+
+.live-location {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.live-location p {
+    color: #667085;
+    margin-top: 7px;
+}
+
+
+/* =================================================
+   QR SCANNER
+   ================================================= */
+
+.scanner-section {
+    text-align: center;
+}
+
+.scanner-card {
+    max-width: 500px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.scanner-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.scanner-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.scanner-card > p {
+    color: #667085;
+    margin-bottom: 20px;
+}
+
+#qr-reader {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.scan-btn {
+    border: none;
+
+    background: #172033;
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.scan-btn:hover {
+    background: #2563eb;
+}
+
+#scanResult {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+/* =================================================
+   PAYMENT
+   ================================================= */
+
+.payment-section {
+    background: #f5f7fb;
+}
+
+.payment-card {
+    max-width: 500px;
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.phonepe-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: auto auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0e7ff;
+
+    font-size: 35px;
+}
+
+.payment-card h3 {
+    font-size: 25px;
+}
+
+.payment-card > p {
+    color: #667085;
+    margin: 10px 0 20px;
+}
+
+.payment-amount {
+    font-size: 45px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.phonepe-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    background: #673ab7;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.phonepe-btn:hover {
+    background: #512da8;
+}
+
+.payment-status {
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #f2f4f7;
+
+    color: #475467;
+}
+
+
+/* =================================================
+   BOOKING QR
+   ================================================= */
+
+.booking-qr-section {
+    text-align: center;
+}
+
+.booking-qr-card {
+    max-width: 450px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+#bookingQRCode {
+    min-height: 220px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+#qrBookingText {
+    margin-bottom: 20px;
+}
+
+
+/* =================================================
+   MOBILE
+   ================================================= */
+
+@media (max-width: 800px) {
+
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .live-location {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .live-location .location-btn {
+        width: 100%;
+    }
+
+    .scanner-card,
+    .payment-card,
+    .booking-qr-card {
+        width: 100%;
+    }
+}
+```
+
