@@ -438,3 +438,404 @@ console.log(
 console.log(
     "Created by Om Jesur"
 );
+```javascript
+/* =================================================
+   SMART LOCATION
+   ================================================= */
+
+function openLocation(place) {
+
+    const googleMapsURL =
+        "https://www.google.com/maps/search/?api=1&query=" +
+        encodeURIComponent(place);
+
+    window.open(
+        googleMapsURL,
+        "_blank"
+    );
+}
+
+
+/* =================================================
+   CURRENT LOCATION
+   ================================================= */
+
+function getCurrentLocation() {
+
+    const status =
+        document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+
+        status.textContent =
+            "Location is not supported by this browser.";
+
+        return;
+    }
+
+    status.textContent =
+        "📍 Detecting your location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+
+            status.innerHTML =
+                "✅ Location detected! " +
+                latitude.toFixed(5) +
+                ", " +
+                longitude.toFixed(5);
+
+
+            const mapsURL =
+                "https://www.google.com/maps/search/?api=1&query=" +
+                latitude +
+                "," +
+                longitude;
+
+
+            setTimeout(() => {
+
+                window.open(
+                    mapsURL,
+                    "_blank"
+                );
+
+            }, 500);
+
+        },
+
+
+        function(error) {
+
+            status.textContent =
+                "❌ Unable to access location. Please allow location permission.";
+
+        }
+
+    );
+}
+
+
+/* =================================================
+   PAYMENT AMOUNT
+   ================================================= */
+
+function updatePaymentAmount() {
+
+    const amount =
+        document.getElementById("parkingPrice").textContent;
+
+    document.getElementById(
+        "paymentAmount"
+    ).textContent = amount;
+}
+
+
+/* =================================================
+   PHONEPE DEMO PAYMENT
+   ================================================= */
+
+function startPhonePePayment() {
+
+    const amount =
+        document.getElementById(
+            "paymentAmount"
+        ).textContent;
+
+
+    const status =
+        document.getElementById(
+            "paymentStatus"
+        );
+
+
+    if (
+        amount === "0" ||
+        amount === ""
+    ) {
+
+        alert(
+            "Please select vehicle type and parking slot first."
+        );
+
+        return;
+    }
+
+
+    status.textContent =
+        "⏳ Creating payment request...";
+
+
+    /*
+       DEMO PAYMENT FLOW
+
+       Real PhonePe payment should be
+       connected through backend API.
+    */
+
+
+    setTimeout(() => {
+
+        status.textContent =
+            "📱 Opening PhonePe payment...";
+
+
+        /*
+          Demo UPI deep-link.
+
+          Replace this with your actual
+          payment gateway/backend integration.
+        */
+
+        const upiURL =
+            "upi://pay?" +
+            "pa=yourmerchant@upi" +
+            "&pn=SmartPark" +
+            "&am=" + amount +
+            "&cu=INR";
+
+
+        window.location.href =
+            upiURL;
+
+
+    }, 1000);
+}
+
+
+/* =================================================
+   WATCH PRICE
+   ================================================= */
+
+vehicleType.addEventListener(
+    "change",
+    function() {
+
+        calculatePrice();
+
+        updatePaymentAmount();
+
+    }
+);
+
+
+/* =================================================
+   QR SCANNER
+   ================================================= */
+
+let qrScanner = null;
+
+
+function startQRScanner() {
+
+    const result =
+        document.getElementById(
+            "scanResult"
+        );
+
+
+    if (
+        typeof Html5Qrcode ===
+        "undefined"
+    ) {
+
+        result.textContent =
+            "❌ QR Scanner library not loaded.";
+
+        return;
+    }
+
+
+    if (qrScanner !== null) {
+
+        result.textContent =
+            "Scanner is already running.";
+
+        return;
+    }
+
+
+    qrScanner =
+        new Html5Qrcode(
+            "qr-reader"
+        );
+
+
+    qrScanner.start(
+
+        {
+            facingMode: "environment"
+        },
+
+        {
+            fps: 10,
+            qrbox: 250
+        },
+
+
+        function(decodedText) {
+
+            result.textContent =
+                "✅ QR Scanned: " +
+                decodedText;
+
+
+            /*
+              If QR contains a URL,
+              open it automatically.
+            */
+
+            if (
+                decodedText.startsWith(
+                    "http"
+                )
+            ) {
+
+                window.open(
+                    decodedText,
+                    "_blank"
+                );
+
+            }
+
+
+            qrScanner.stop()
+                .then(() => {
+
+                    qrScanner.clear();
+
+                    qrScanner = null;
+
+                });
+
+        },
+
+
+        function(errorMessage) {
+
+            // Scanner continues silently
+
+        }
+
+    )
+
+    .catch(function(error) {
+
+        result.textContent =
+            "❌ Camera permission denied or unavailable.";
+
+        qrScanner = null;
+
+    });
+
+}
+
+
+/* =================================================
+   GENERATE BOOKING QR
+   ================================================= */
+
+function generateBookingQR(booking) {
+
+    const qrContainer =
+        document.getElementById(
+            "bookingQRCode"
+        );
+
+
+    const qrText =
+        document.getElementById(
+            "qrBookingText"
+        );
+
+
+    qrContainer.innerHTML = "";
+
+
+    const bookingData =
+
+        "SMARTPARK BOOKING\n" +
+
+        "Vehicle: " +
+        booking.vehicle +
+
+        "\nType: " +
+        booking.type +
+
+        "\nSlot: " +
+        booking.slot +
+
+        "\nDate: " +
+        booking.date +
+
+        "\nTime: " +
+        booking.time +
+
+        "\nFee: ₹" +
+        booking.price;
+
+
+    new QRCode(
+        qrContainer,
+        {
+            text: bookingData,
+            width: 200,
+            height: 200
+        }
+    );
+
+
+    qrText.textContent =
+        "🎫 " +
+        booking.slot +
+        " • " +
+        booking.vehicle;
+}
+
+
+/* =================================================
+   DOWNLOAD BOOKING QR
+   ================================================= */
+
+function downloadBookingQR() {
+
+    const qrImage =
+        document.querySelector(
+            "#bookingQRCode img"
+        );
+
+
+    if (!qrImage) {
+
+        alert(
+            "Please complete a booking first."
+        );
+
+        return;
+    }
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        qrImage.src;
+
+    link.download =
+        "SmartPark-Booking-QR.png";
+
+
+    link.click();
+}
+```
+
