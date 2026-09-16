@@ -1,122 +1,227 @@
-/* ================= GENERAL ================= */
+/* =====================================================
+   SMARTPARK
+   SMART PARKING MANAGEMENT SYSTEM
+===================================================== */
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: #f5f7fb;
+
     color: #172033;
+
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header {
+
     width: 100%;
-    height: 70px;
+
+    min-height: 70px;
 
     background: #ffffff;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    padding: 0 7%;
+    padding: 15px 7%;
 
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
-    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    box-shadow:
+        0 2px 15px
+        rgba(0,0,0,0.08);
+
 }
+
 
 .logo {
+
     font-size: 24px;
+
     font-weight: bold;
+
+    white-space: nowrap;
+
 }
+
 
 .logo span {
+
     margin-left: 5px;
+
 }
+
 
 nav {
+
     display: flex;
-    gap: 25px;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
 }
+
 
 nav a {
+
     text-decoration: none;
+
     color: #172033;
+
     font-weight: 600;
+
     transition: 0.3s;
+
 }
+
 
 nav a:hover {
+
     color: #2563eb;
+
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
-    min-height: 520px;
+
+    min-height: 560px;
 
     display: flex;
+
     align-items: center;
 
     padding: 60px 8%;
 
     background:
+
         linear-gradient(
-            rgba(20, 30, 50, 0.75),
-            rgba(20, 30, 50, 0.75)
+            rgba(20,30,50,0.78),
+            rgba(20,30,50,0.78)
         ),
-        url("https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1600&q=80");
+
+        url(
+        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1600&q=80"
+        );
 
     background-size: cover;
+
     background-position: center;
 
     color: white;
+
 }
+
 
 .hero-content {
-    max-width: 650px;
+
+    max-width: 700px;
+
 }
+
 
 .tagline {
+
     letter-spacing: 3px;
+
     font-weight: bold;
+
     margin-bottom: 15px;
+
 }
+
 
 .hero h1 {
+
     font-size: 60px;
+
     line-height: 1.05;
+
     margin-bottom: 20px;
+
 }
+
 
 .hero h1 span {
+
     color: #60a5fa;
+
 }
+
 
 .hero p:not(.tagline) {
+
     font-size: 18px;
+
     line-height: 1.7;
+
     margin-bottom: 30px;
+
 }
 
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
 .hero-btn {
+
     display: inline-block;
 
     background: #2563eb;
+
     color: white;
 
     padding: 14px 28px;
@@ -124,56 +229,105 @@ nav a:hover {
     border-radius: 8px;
 
     text-decoration: none;
+
     font-weight: bold;
 
     transition: 0.3s;
+
 }
+
 
 .hero-btn:hover {
+
     transform: translateY(-3px);
+
     background: #1d4ed8;
+
 }
 
 
-/* ================= CONTAINER ================= */
+.secondary-btn {
+
+    background: transparent;
+
+    border: 2px solid white;
+
+}
+
+
+.secondary-btn:hover {
+
+    background: white;
+
+    color: #172033;
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container {
+
     width: 86%;
+
     max-width: 1200px;
 
     margin: auto;
+
     padding: 80px 0;
+
 }
+
 
 .section-title {
+
     margin-bottom: 35px;
+
 }
+
 
 .section-title p {
+
     color: #2563eb;
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
+
     margin-bottom: 8px;
+
 }
+
 
 .section-title h2 {
+
     font-size: 34px;
+
 }
 
 
-/* ================= DASHBOARD ================= */
+/* =====================================================
+   DASHBOARD
+===================================================== */
 
 .dashboard {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
     gap: 20px;
+
 }
 
+
 .stat-card {
+
     background: white;
 
     border-radius: 15px;
@@ -181,20 +335,28 @@ nav a:hover {
     padding: 25px;
 
     display: flex;
+
     align-items: center;
 
     gap: 18px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.06);
+        0 5px 20px
+        rgba(0,0,0,0.06);
+
 }
 
+
 .stat-icon {
+
     width: 55px;
+
     height: 55px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #e8f0ff;
@@ -202,92 +364,148 @@ nav a:hover {
     border-radius: 12px;
 
     font-size: 25px;
+
 }
+
 
 .stat-card h3 {
+
     font-size: 30px;
+
 }
+
 
 .stat-card p {
+
     color: #667085;
+
     margin-top: 5px;
+
 }
+
 
 .stat-card.available {
-    border-left: 5px solid #16a34a;
+
+    border-left:
+        5px solid #16a34a;
+
 }
+
 
 .stat-card.occupied {
-    border-left: 5px solid #dc2626;
+
+    border-left:
+        5px solid #dc2626;
+
 }
 
 
-/* ================= PARKING ================= */
+/* =====================================================
+   PARKING
+===================================================== */
 
 .parking-section {
+
     background: #ffffff;
+
     max-width: 100%;
+
     padding-left: 7%;
+
     padding-right: 7%;
+
 }
 
+
 .legend {
+
     display: flex;
+
     gap: 25px;
 
     margin-bottom: 30px;
+
+    flex-wrap: wrap;
+
 }
+
 
 .legend span {
+
     display: flex;
+
     align-items: center;
+
     gap: 7px;
+
 }
 
+
 .legend i {
+
     width: 18px;
+
     height: 18px;
 
     display: inline-block;
 
     border-radius: 4px;
+
 }
+
 
 .available-box {
+
     background: #22c55e;
+
 }
+
 
 .occupied-box {
+
     background: #ef4444;
+
 }
+
 
 .selected-box {
+
     background: #2563eb;
+
 }
 
+
 .parking-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
     gap: 20px;
 
     max-width: 900px;
+
     margin: auto;
+
 }
 
-.slot {
-    height: 130px;
 
-    border: 3px solid #22c55e;
+.slot {
+
+    height: 140px;
+
+    border:
+        3px solid #22c55e;
 
     border-radius: 12px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     cursor: pointer;
@@ -295,49 +513,222 @@ nav a:hover {
     background: #f0fdf4;
 
     transition: 0.3s;
+
+    position: relative;
+
 }
+
 
 .slot:hover {
+
     transform: translateY(-5px);
+
 }
 
+
 .slot.occupied {
+
     background: #fef2f2;
+
     border-color: #ef4444;
 
     cursor: not-allowed;
+
 }
+
 
 .slot.selected {
+
     background: #eff6ff;
+
     border-color: #2563eb;
+
     transform: scale(1.04);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37,99,235,0.25);
+
 }
+
 
 .slot-number {
+
     font-size: 25px;
+
     font-weight: bold;
+
 }
+
 
 .slot-status {
+
     margin-top: 8px;
+
     font-size: 13px;
+
 }
 
 
-/* ================= BOOKING ================= */
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-section {
+
+    background: #f5f7fb;
+
+}
+
+
+.location-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.location-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+
+}
+
+
+.location-card:hover {
+
+    transform: translateY(-7px);
+
+}
+
+
+.location-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.location-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.location-card p {
+
+    color: #667085;
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+
+}
+
+
+.location-btn {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.location-btn:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+}
+
+
+.live-location {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.07);
+
+}
+
+
+.live-location p {
+
+    color: #667085;
+
+    margin-top: 7px;
+
+}
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
 
 .booking-container {
+
     display: grid;
 
     grid-template-columns:
         1.5fr 1fr;
 
     gap: 30px;
+
 }
+
 
 #bookingForm,
 .price-card {
+
     background: white;
 
     padding: 35px;
@@ -345,51 +736,71 @@ nav a:hover {
     border-radius: 15px;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.06);
+        0 5px 20px
+        rgba(0,0,0,0.06);
+
 }
+
 
 .input-group {
+
     margin-bottom: 20px;
+
 }
 
+
 .input-group label {
+
     display: block;
 
     font-weight: bold;
 
     margin-bottom: 8px;
+
 }
+
 
 input,
 select {
+
     width: 100%;
 
     padding: 13px 15px;
 
-    border: 1px solid #d0d5dd;
+    border:
+        1px solid #d0d5dd;
 
     border-radius: 8px;
 
     font-size: 15px;
 
     outline: none;
+
 }
+
 
 input:focus,
 select:focus {
+
     border-color: #2563eb;
+
 }
 
+
 .input-row {
+
     display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
     gap: 15px;
+
 }
 
+
 .selected-info {
+
     padding: 18px;
 
     background: #eff6ff;
@@ -397,18 +808,28 @@ select:focus {
     border-radius: 10px;
 
     margin-bottom: 20px;
+
 }
+
 
 .selected-info p {
+
     color: #667085;
+
 }
+
 
 .selected-info h3 {
+
     margin-top: 5px;
+
     color: #2563eb;
+
 }
 
+
 .book-btn {
+
     width: 100%;
 
     padding: 15px;
@@ -428,62 +849,388 @@ select:focus {
     cursor: pointer;
 
     transition: 0.3s;
+
 }
+
 
 .book-btn:hover {
+
     background: #1d4ed8;
+
 }
 
 
-/* ================= PRICE ================= */
+/* =====================================================
+   PRICE
+===================================================== */
 
 .price-card {
+
     text-align: center;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
+
 }
 
+
 .price-icon {
+
     font-size: 45px;
 
     margin-bottom: 15px;
+
 }
+
 
 .price-card h3 {
+
     font-size: 25px;
+
 }
 
+
 .price-card p {
+
     color: #667085;
 
     margin: 10px 0 20px;
+
 }
 
+
 .price {
+
     font-size: 50px;
 
     font-weight: bold;
 
     margin-bottom: 20px;
+
 }
+
 
 .price-card small {
+
     line-height: 2;
+
     color: #667085;
+
 }
 
 
-/* ================= HISTORY ================= */
+/* =====================================================
+   PAYMENT
+===================================================== */
+
+.payment-section {
+
+    background: #f5f7fb;
+
+}
+
+
+.payment-card {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.phonepe-logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        auto auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f0e7ff;
+
+    font-size: 35px;
+
+}
+
+
+.payment-card h3 {
+
+    font-size: 25px;
+
+}
+
+
+.payment-card > p {
+
+    color: #667085;
+
+    margin: 10px 0 20px;
+
+}
+
+
+.payment-amount {
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+}
+
+
+.phonepe-btn {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    background: #673ab7;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.phonepe-btn:hover {
+
+    background: #512da8;
+
+}
+
+
+.payment-status {
+
+    margin-top: 20px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: #f2f4f7;
+
+    color: #475467;
+
+}
+
+
+/* =====================================================
+   QR SCANNER
+===================================================== */
+
+.scanner-section {
+
+    text-align: center;
+
+}
+
+
+.scanner-card {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.scanner-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.scanner-card h3 {
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.scanner-card > p {
+
+    color: #667085;
+
+    margin-bottom: 20px;
+
+}
+
+
+#qr-reader {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 20px auto;
+
+}
+
+
+.scan-btn {
+
+    border: none;
+
+    background: #172033;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.scan-btn:hover {
+
+    background: #2563eb;
+
+}
+
+
+#scanResult {
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   BOOKING QR
+===================================================== */
+
+.booking-qr-section {
+
+    text-align: center;
+
+}
+
+
+.booking-qr-card {
+
+    max-width: 450px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0,0,0,0.08);
+
+}
+
+
+#bookingQRCode {
+
+    min-height: 220px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+#bookingQRCode img {
+
+    margin: auto;
+
+}
+
+
+#qrBookingText {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================================
+   HISTORY
+===================================================== */
 
 .history-section {
+
     padding-bottom: 100px;
+
 }
 
+
 .table-container {
+
     background: white;
 
     border-radius: 15px;
@@ -491,40 +1238,58 @@ select:focus {
     overflow-x: auto;
 
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.06);
+        0 5px 20px
+        rgba(0,0,0,0.06);
+
 }
 
+
 table {
+
     width: 100%;
 
     border-collapse: collapse;
 
-    min-width: 700px;
+    min-width: 800px;
+
 }
+
 
 th,
 td {
+
     padding: 17px;
 
     text-align: left;
 
-    border-bottom: 1px solid #eaecf0;
+    border-bottom:
+        1px solid #eaecf0;
+
 }
 
+
 th {
+
     background: #f9fafb;
 
     font-size: 14px;
+
 }
+
 
 td {
+
     color: #475467;
+
 }
 
 
-/* ================= ABOUT ================= */
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .about {
+
     padding: 80px 8%;
 
     background: #172033;
@@ -537,13 +1302,19 @@ td {
         1fr 1fr;
 
     gap: 50px;
+
 }
+
 
 .about > div:first-child {
+
     max-width: 550px;
+
 }
 
+
 .about p:first-child {
+
     color: #60a5fa;
 
     font-weight: bold;
@@ -551,57 +1322,84 @@ td {
     letter-spacing: 2px;
 
     margin-bottom: 15px;
+
 }
 
+
 .about h2 {
+
     font-size: 42px;
 
     margin-bottom: 20px;
+
 }
 
-.about > div:first-child > p:last-child {
+
+.about > div:first-child >
+p:last-child {
+
     color: #cbd5e1;
 
     line-height: 1.8;
+
 }
 
+
 .features {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 20px;
+
 }
+
 
 .features div {
+
     padding: 20px;
 
-    background: rgba(255,255,255,0.05);
+    background:
+        rgba(255,255,255,0.05);
 
     border-radius: 12px;
+
 }
+
 
 .features div:first-letter {
+
     font-size: 25px;
+
 }
+
 
 .features h3 {
+
     margin: 12px 0;
+
 }
 
+
 .features p {
+
     color: #cbd5e1;
 
     font-size: 14px;
 
     line-height: 1.5;
+
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
+
     text-align: center;
 
     background: #0f172a;
@@ -609,57 +1407,106 @@ footer {
     color: white;
 
     padding: 40px 20px;
+
 }
+
 
 footer h3 {
+
     font-size: 25px;
+
     margin-bottom: 10px;
+
 }
 
+
 footer p {
+
     color: #94a3b8;
 
     margin: 8px;
+
 }
+
 
 footer strong {
+
     color: white;
+
 }
 
+
 .copyright {
+
     margin-top: 20px !important;
 
     font-size: 13px;
+
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media (max-width: 900px) {
 
+
     .dashboard {
+
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2,1fr);
+
     }
+
 
     .parking-grid {
+
         grid-template-columns:
-            repeat(3, 1fr);
+            repeat(3,1fr);
+
     }
+
 
     .booking-container {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
-    .about {
-        grid-template-columns: 1fr;
+
+    .location-grid {
+
+        grid-template-columns:
+            1fr;
+
     }
+
+
+    .about {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .features {
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
 }
 
 
 @media (max-width: 600px) {
 
+
     .header {
+
         height: auto;
 
         padding: 15px 5%;
@@ -667,374 +1514,147 @@ footer strong {
         flex-direction: column;
 
         gap: 15px;
+
     }
+
 
     nav {
+
         gap: 12px;
 
-        flex-wrap: wrap;
-
-        justify-content: center;
     }
+
 
     nav a {
+
         font-size: 13px;
+
     }
+
 
     .hero {
-        min-height: 450px;
+
+        min-height: 500px;
 
         padding: 50px 7%;
+
     }
+
 
     .hero h1 {
+
         font-size: 42px;
+
     }
 
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .hero-btn {
+
+        text-align: center;
+
+    }
+
+
     .container {
+
         width: 90%;
 
         padding: 55px 0;
+
     }
+
 
     .dashboard {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .parking-grid {
+
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(2,1fr);
 
         gap: 12px;
+
     }
+
 
     .slot {
+
         height: 110px;
+
     }
+
 
     .input-row {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .features {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .about {
+
         padding: 60px 7%;
+
     }
+
 
     .about h2 {
+
         font-size: 32px;
+
     }
-}
-```css
-/* =================================================
-   SMART LOCATION
-   ================================================= */
 
-.location-section {
-    background: #f5f7fb;
-}
-
-.location-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.location-card {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-    transition: 0.3s;
-}
-
-.location-card:hover {
-    transform: translateY(-7px);
-}
-
-.location-icon {
-    font-size: 45px;
-    margin-bottom: 15px;
-}
-
-.location-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.location-card p {
-    color: #667085;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.location-btn {
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.location-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-2px);
-}
-
-
-/* =================================================
-   LIVE LOCATION
-   ================================================= */
-
-.live-location {
-    margin-top: 30px;
-    padding: 25px;
-    background: white;
-    border-radius: 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-}
-
-.live-location p {
-    color: #667085;
-    margin-top: 7px;
-}
-
-
-/* =================================================
-   QR SCANNER
-   ================================================= */
-
-.scanner-section {
-    text-align: center;
-}
-
-.scanner-card {
-    max-width: 500px;
-    margin: auto;
-
-    background: white;
-    padding: 35px;
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-
-.scanner-icon {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.scanner-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.scanner-card > p {
-    color: #667085;
-    margin-bottom: 20px;
-}
-
-#qr-reader {
-    width: 100%;
-    max-width: 400px;
-    margin: 20px auto;
-}
-
-.scan-btn {
-    border: none;
-
-    background: #172033;
-    color: white;
-
-    padding: 13px 25px;
-
-    border-radius: 9px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.scan-btn:hover {
-    background: #2563eb;
-}
-
-#scanResult {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-
-/* =================================================
-   PAYMENT
-   ================================================= */
-
-.payment-section {
-    background: #f5f7fb;
-}
-
-.payment-card {
-    max-width: 500px;
-    margin: auto;
-
-    background: white;
-
-    padding: 40px;
-
-    text-align: center;
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-
-.phonepe-logo {
-    width: 70px;
-    height: 70px;
-
-    margin: auto auto 15px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f0e7ff;
-
-    font-size: 35px;
-}
-
-.payment-card h3 {
-    font-size: 25px;
-}
-
-.payment-card > p {
-    color: #667085;
-    margin: 10px 0 20px;
-}
-
-.payment-amount {
-    font-size: 45px;
-    font-weight: bold;
-
-    margin-bottom: 25px;
-}
-
-.phonepe-btn {
-    width: 100%;
-
-    border: none;
-
-    padding: 15px;
-
-    border-radius: 9px;
-
-    background: #673ab7;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.phonepe-btn:hover {
-    background: #512da8;
-}
-
-.payment-status {
-    margin-top: 20px;
-
-    padding: 12px;
-
-    border-radius: 8px;
-
-    background: #f2f4f7;
-
-    color: #475467;
-}
-
-
-/* =================================================
-   BOOKING QR
-   ================================================= */
-
-.booking-qr-section {
-    text-align: center;
-}
-
-.booking-qr-card {
-    max-width: 450px;
-
-    margin: auto;
-
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-}
-
-#bookingQRCode {
-    min-height: 220px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-#qrBookingText {
-    margin-bottom: 20px;
-}
-
-
-/* =================================================
-   MOBILE
-   ================================================= */
-
-@media (max-width: 800px) {
-
-    .location-grid {
-        grid-template-columns: 1fr;
-    }
 
     .live-location {
+
         flex-direction: column;
+
         align-items: flex-start;
-        gap: 20px;
+
     }
+
 
     .live-location .location-btn {
+
         width: 100%;
+
     }
 
-    .scanner-card,
-    .payment-card,
-    .booking-qr-card {
-        width: 100%;
+
+    .payment-card {
+
+        padding: 25px;
+
     }
+
+
+    .scanner-card {
+
+        padding: 20px;
+
+    }
+
 }
-```
-
