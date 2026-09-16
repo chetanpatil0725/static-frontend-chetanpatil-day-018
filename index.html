@@ -1,207 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>SmartPark | Smart Parking Solution</title>
 
-    <link rel="stylesheet" href="style.css">
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- QR SCANNER LIBRARY -->
+
+    <script
+        src="https://unpkg.com/html5-qrcode"
+    ></script>
+
+
+    <!-- QR GENERATOR LIBRARY -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"
+    ></script>
+
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-        <div class="logo">
-            🚗 <span>SmartPark</span>
-        </div>
 
-        <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#parking">Parking</a>
-            <a href="#booking">Booking</a>
-            <a href="#history">History</a>
-        </nav>
-    </header>
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="logo">
+
+        🚗
+
+        <span>
+            SmartPark
+        </span>
+
+    </div>
 
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-        <div class="hero-content">
-            <p class="tagline">POWERED BY TECHNOLOGY</p>
+    <nav>
 
-            <h1>Smart Parking<br>
-                <span>Made Simple</span>
-            </h1>
+        <a href="#dashboard">
+            Dashboard
+        </a>
 
-            <p>
-                Find, book and manage your parking space easily
-                with SmartPark.
-            </p>
+        <a href="#parking">
+            Parking
+        </a>
 
-            <a href="#parking" class="hero-btn">
+        <a href="#locations">
+            Locations
+        </a>
+
+        <a href="#booking">
+            Booking
+        </a>
+
+        <a href="#scanner">
+            Scanner
+        </a>
+
+        <a href="#history">
+            History
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="tagline">
+            POWERED BY TECHNOLOGY
+        </p>
+
+
+        <h1>
+
+            Smart Parking
+
+            <br>
+
+            <span>
+                Made Simple
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Find, book, pay and manage
+            your parking space easily
+            with SmartPark.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#parking"
+                class="hero-btn"
+            >
                 Find Parking 🚘
             </a>
-        </div>
-    </section>
 
 
-    <!-- ================= DASHBOARD ================= -->
-    <section id="dashboard" class="container">
-
-        <div class="section-title">
-            <p>SMART DASHBOARD</p>
-            <h2>Parking Overview</h2>
-        </div>
-
-        <div class="dashboard">
-
-            <div class="stat-card">
-                <div class="stat-icon">🅿️</div>
-                <div>
-                    <h3 id="totalSlots">12</h3>
-                    <p>Total Slots</p>
-                </div>
-            </div>
-
-            <div class="stat-card available">
-                <div class="stat-icon">✅</div>
-                <div>
-                    <h3 id="availableSlots">0</h3>
-                    <p>Available</p>
-                </div>
-            </div>
-
-            <div class="stat-card occupied">
-                <div class="stat-icon">🚗</div>
-                <div>
-                    <h3 id="occupiedSlots">0</h3>
-                    <p>Occupied</p>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-icon">💰</div>
-                <div>
-                    <h3 id="totalBookings">0</h3>
-                    <p>Total Bookings</p>
-                </div>
-            </div>
+            <a
+                href="#locations"
+                class="hero-btn secondary-btn"
+            >
+                📍 Find Location
+            </a>
 
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= PARKING ================= -->
-    <section id="parking" class="container parking-section">
 
-        <div class="section-title">
-            <p>LIVE PARKING</p>
-            <h2>Select Your Parking Slot</h2>
-        </div>
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
-        <div class="legend">
-            <span>
-                <i class="available-box"></i> Available
-            </span>
-
-            <span>
-                <i class="occupied-box"></i> Occupied
-            </span>
-
-            <span>
-                <i class="selected-box"></i> Selected
-            </span>
-        </div>
-
-        <div id="parkingGrid" class="parking-grid">
-            <!-- JavaScript will generate slots -->
-        </div>
-
-    </section>
-
-```html
-<!-- ================= SMART LOCATION ================= -->
-
-<section id="locations" class="container location-section">
+<section
+    id="dashboard"
+    class="container"
+>
 
     <div class="section-title">
-        <p>SMART LOCATION</p>
-        <h2>Find Parking Near You</h2>
+
+        <p>
+            SMART DASHBOARD
+        </p>
+
+        <h2>
+            Parking Overview
+        </h2>
+
     </div>
+
+
+    <div class="dashboard">
+
+
+        <!-- TOTAL -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🅿️
+            </div>
+
+            <div>
+
+                <h3 id="totalSlots">
+                    12
+                </h3>
+
+                <p>
+                    Total Slots
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AVAILABLE -->
+
+        <div class="stat-card available">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <h3 id="availableSlots">
+                    0
+                </h3>
+
+                <p>
+                    Available
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OCCUPIED -->
+
+        <div class="stat-card occupied">
+
+            <div class="stat-icon">
+                🚗
+            </div>
+
+            <div>
+
+                <h3 id="occupiedSlots">
+                    0
+                </h3>
+
+                <p>
+                    Occupied
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOOKINGS -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
+            </div>
+
+            <div>
+
+                <h3 id="totalBookings">
+                    0
+                </h3>
+
+                <p>
+                    Total Bookings
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PARKING
+===================================================== -->
+
+<section
+    id="parking"
+    class="container parking-section"
+>
+
+    <div class="section-title">
+
+        <p>
+            LIVE PARKING
+        </p>
+
+        <h2>
+            Select Your Parking Slot
+        </h2>
+
+    </div>
+
+
+    <!-- LEGEND -->
+
+    <div class="legend">
+
+        <span>
+
+            <i class="available-box"></i>
+
+            Available
+
+        </span>
+
+
+        <span>
+
+            <i class="occupied-box"></i>
+
+            Occupied
+
+        </span>
+
+
+        <span>
+
+            <i class="selected-box"></i>
+
+            Selected
+
+        </span>
+
+    </div>
+
+
+    <!-- PARKING GRID -->
+
+    <div
+        id="parkingGrid"
+        class="parking-grid"
+    ></div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SMART LOCATIONS
+===================================================== -->
+
+<section
+    id="locations"
+    class="container location-section"
+>
+
+    <div class="section-title">
+
+        <p>
+            SMART LOCATION
+        </p>
+
+        <h2>
+            Find Parking Locations
+        </h2>
+
+    </div>
+
 
     <div class="location-grid">
 
+
+        <!-- AIRPORT -->
+
         <div class="location-card">
 
-            <div class="location-icon">✈️</div>
+            <div class="location-icon">
+                ✈️
+            </div>
 
-            <h3>Airport Parking</h3>
+            <h3>
+                Airport Parking
+            </h3>
 
-            <p>Find parking near airport.</p>
+            <p>
+                Find parking near
+                Sardar Vallabhbhai Patel
+                International Airport.
+            </p>
 
             <button
                 class="location-btn"
-                onclick="openLocation('Sardar Vallabhbhai Patel International Airport, Ahmedabad')">
-                📍 Open in Google Maps
+                onclick="openLocation(
+                    'Sardar Vallabhbhai Patel International Airport, Ahmedabad'
+                )"
+            >
+                📍 Open Google Maps
             </button>
 
         </div>
 
 
+
+        <!-- MALL -->
+
         <div class="location-card">
 
-            <div class="location-icon">🏬</div>
+            <div class="location-icon">
+                🏬
+            </div>
 
-            <h3>Mall Parking</h3>
+            <h3>
+                Mall Parking
+            </h3>
 
-            <p>Find parking near shopping mall.</p>
+            <p>
+                Find parking near
+                Ahmedabad One Mall.
+            </p>
 
             <button
                 class="location-btn"
-                onclick="openLocation('Ahmedabad One Mall, Ahmedabad')">
-                📍 Open in Google Maps
+                onclick="openLocation(
+                    'Ahmedabad One Mall, Ahmedabad'
+                )"
+            >
+                📍 Open Google Maps
             </button>
 
         </div>
 
 
+
+        <!-- RAILWAY -->
+
         <div class="location-card">
 
-            <div class="location-icon">🚉</div>
+            <div class="location-icon">
+                🚉
+            </div>
 
-            <h3>Railway Parking</h3>
+            <h3>
+                Railway Parking
+            </h3>
 
-            <p>Find parking near railway station.</p>
+            <p>
+                Find parking near
+                Ahmedabad Railway Station.
+            </p>
 
             <button
                 class="location-btn"
-                onclick="openLocation('Ahmedabad Railway Station')">
-                📍 Open in Google Maps
+                onclick="openLocation(
+                    'Ahmedabad Railway Station'
+                )"
+            >
+                📍 Open Google Maps
             </button>
 
         </div>
+
 
     </div>
 
 
-    <!-- LIVE LOCATION -->
+
+    <!-- CURRENT LOCATION -->
 
     <div class="live-location">
 
         <div>
-            <h3>📍 Use My Current Location</h3>
+
+            <h3>
+                📍 Use My Current Location
+            </h3>
 
             <p id="locationStatus">
-                Find nearby parking using your phone location.
+
+                Detect your location
+                and open it in Google Maps.
+
             </p>
+
         </div>
+
 
         <button
             class="location-btn"
-            onclick="getCurrentLocation()">
+            onclick="getCurrentLocation()"
+        >
+
             Detect Location
+
         </button>
 
     </div>
@@ -209,52 +494,233 @@
 </section>
 
 
-<!-- ================= QR SCANNER ================= -->
 
-<section id="scanner" class="container scanner-section">
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section
+    id="booking"
+    class="container"
+>
 
     <div class="section-title">
-        <p>SMART SCANNER</p>
-        <h2>Scan Parking QR</h2>
-    </div>
-
-    <div class="scanner-card">
-
-        <div class="scanner-icon">
-            📱
-        </div>
-
-        <h3>Scan Parking QR Code</h3>
 
         <p>
-            Scan your parking QR code using your phone camera.
+            SMART BOOKING
         </p>
 
-        <div id="qr-reader"></div>
+        <h2>
+            Book Your Parking
+        </h2>
 
-        <button
-            class="scan-btn"
-            onclick="startQRScanner()">
-            📷 Start Scanner
-        </button>
+    </div>
 
-        <p id="scanResult">
-            Scanner is ready.
-        </p>
+
+    <div class="booking-container">
+
+
+        <!-- BOOKING FORM -->
+
+        <form id="bookingForm">
+
+
+            <!-- VEHICLE -->
+
+            <div class="input-group">
+
+                <label>
+                    Vehicle Number
+                </label>
+
+                <input
+                    type="text"
+                    id="vehicleNumber"
+                    placeholder="Example: GJ01AB1234"
+                    maxlength="15"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- VEHICLE TYPE -->
+
+            <div class="input-group">
+
+                <label>
+                    Vehicle Type
+                </label>
+
+                <select
+                    id="vehicleType"
+                    required
+                >
+
+                    <option value="">
+                        Select Vehicle
+                    </option>
+
+                    <option value="Bike">
+                        🏍️ Bike
+                    </option>
+
+                    <option value="Car">
+                        🚗 Car
+                    </option>
+
+                    <option value="SUV">
+                        🚙 SUV
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DATE/TIME -->
+
+            <div class="input-row">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="bookingTime"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SELECTED SLOT -->
+
+            <div class="selected-info">
+
+                <p>
+                    Selected Slot
+                </p>
+
+                <h3 id="selectedSlot">
+
+                    No slot selected
+
+                </h3>
+
+            </div>
+
+
+
+            <!-- CONFIRM -->
+
+            <button
+                type="submit"
+                class="book-btn"
+            >
+
+                Confirm Parking 🚗
+
+            </button>
+
+
+        </form>
+
+
+
+        <!-- PRICE CARD -->
+
+        <div class="price-card">
+
+            <div class="price-icon">
+                💳
+            </div>
+
+            <h3>
+                Parking Fee
+            </h3>
+
+            <p>
+                Estimated price for
+                your parking
+            </p>
+
+            <div class="price">
+
+                ₹<span id="parkingPrice">
+                    0
+                </span>
+
+            </div>
+
+            <small>
+
+                Bike: ₹20/hour
+
+                <br>
+
+                Car: ₹40/hour
+
+                <br>
+
+                SUV: ₹60/hour
+
+            </small>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= PAYMENT ================= -->
 
-<section id="payment" class="container payment-section">
+<!-- =====================================================
+     PAYMENT
+===================================================== -->
+
+<section
+    id="payment"
+    class="container payment-section"
+>
 
     <div class="section-title">
-        <p>SMART PAYMENT</p>
-        <h2>Pay Parking Fee</h2>
+
+        <p>
+            SMART PAYMENT
+        </p>
+
+        <h2>
+            Pay Parking Fee
+        </h2>
+
     </div>
+
 
     <div class="payment-card">
 
@@ -262,25 +728,47 @@
             💜
         </div>
 
-        <h3>PhonePe Payment</h3>
+
+        <h3>
+            PhonePe / UPI Payment
+        </h3>
+
 
         <p>
-            Complete your parking payment securely.
+
+            Pay your SmartPark
+            parking fee using
+            UPI.
+
         </p>
 
+
         <div class="payment-amount">
-            ₹<span id="paymentAmount">0</span>
+
+            ₹<span id="paymentAmount">
+                0
+            </span>
+
         </div>
+
 
         <button
             class="phonepe-btn"
-            onclick="startPhonePePayment()">
+            onclick="startPhonePePayment()"
+        >
+
             💳 Pay with PhonePe
+
         </button>
 
-        <div id="paymentStatus"
-             class="payment-status">
+
+        <div
+            id="paymentStatus"
+            class="payment-status"
+        >
+
             Payment not started
+
         </div>
 
     </div>
@@ -288,241 +776,349 @@
 </section>
 
 
-<!-- ================= BOOKING QR ================= -->
 
-<section id="bookingQR" class="container booking-qr-section">
+<!-- =====================================================
+     QR SCANNER
+===================================================== -->
+
+<section
+    id="scanner"
+    class="container scanner-section"
+>
 
     <div class="section-title">
-        <p>DIGITAL PARKING PASS</p>
-        <h2>Your Booking QR</h2>
+
+        <p>
+            SMART SCANNER
+        </p>
+
+        <h2>
+            Scan Parking QR
+        </h2>
+
     </div>
 
-    <div class="booking-qr-card">
 
-        <div id="bookingQRCode">
-            QR will appear after booking.
+    <div class="scanner-card">
+
+
+        <div class="scanner-icon">
+            📱
         </div>
 
-        <h3 id="qrBookingText">
-            No active booking
+
+        <h3>
+            Parking QR Scanner
         </h3>
+
+
+        <p>
+
+            Scan your parking
+            QR code using
+            your phone camera.
+
+        </p>
+
+
+        <!-- QR CAMERA -->
+
+        <div id="qr-reader"></div>
+
 
         <button
             class="scan-btn"
-            onclick="downloadBookingQR()">
-            📥 Save QR
+            onclick="startQRScanner()"
+        >
+
+            📷 Start Camera Scanner
+
+        </button>
+
+
+        <p id="scanResult">
+
+            Scanner is ready.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOKING QR
+===================================================== -->
+
+<section
+    id="bookingQR"
+    class="container booking-qr-section"
+>
+
+    <div class="section-title">
+
+        <p>
+            DIGITAL PARKING PASS
+        </p>
+
+        <h2>
+            Your Booking QR
+        </h2>
+
+    </div>
+
+
+    <div class="booking-qr-card">
+
+
+        <div id="bookingQRCode">
+
+            <p>
+                QR will appear after booking.
+            </p>
+
+        </div>
+
+
+        <h3 id="qrBookingText">
+
+            No active booking
+
+        </h3>
+
+
+        <button
+            class="scan-btn"
+            onclick="downloadBookingQR()"
+        >
+
+            📥 Save Booking QR
+
         </button>
 
     </div>
 
 </section>
-```
-
-    <!-- ================= BOOKING ================= -->
-    <section id="booking" class="container">
-
-        <div class="section-title">
-            <p>SMART BOOKING</p>
-            <h2>Book Your Parking</h2>
-        </div>
-
-        <div class="booking-container">
-
-            <form id="bookingForm">
-
-                <div class="input-group">
-                    <label>Vehicle Number</label>
-                    <input
-                        type="text"
-                        id="vehicleNumber"
-                        placeholder="Example: GJ01AB1234"
-                        required
-                    >
-                </div>
-
-                <div class="input-group">
-                    <label>Vehicle Type</label>
-
-                    <select id="vehicleType" required>
-                        <option value="">Select Vehicle</option>
-                        <option value="Bike">🏍️ Bike</option>
-                        <option value="Car">🚗 Car</option>
-                        <option value="SUV">🚙 SUV</option>
-                    </select>
-                </div>
-
-                <div class="input-row">
-
-                    <div class="input-group">
-                        <label>Date</label>
-
-                        <input
-                            type="date"
-                            id="bookingDate"
-                            required
-                        >
-                    </div>
-
-                    <div class="input-group">
-                        <label>Time</label>
-
-                        <input
-                            type="time"
-                            id="bookingTime"
-                            required
-                        >
-                    </div>
-
-                </div>
-
-                <div class="selected-info">
-                    <p>Selected Slot</p>
-
-                    <h3 id="selectedSlot">
-                        No slot selected
-                    </h3>
-                </div>
-
-                <button type="submit" class="book-btn">
-                    Confirm Parking 🚗
-                </button>
-
-            </form>
 
 
-            <!-- PRICE CARD -->
 
-            <div class="price-card">
+<!-- =====================================================
+     HISTORY
+===================================================== -->
 
-                <div class="price-icon">💳</div>
+<section
+    id="history"
+    class="container history-section"
+>
 
-                <h3>Parking Fee</h3>
+    <div class="section-title">
 
-                <p>Estimated price for your parking</p>
+        <p>
+            YOUR ACTIVITY
+        </p>
 
-                <div class="price">
-                    ₹<span id="parkingPrice">0</span>
-                </div>
+        <h2>
+            Booking History
+        </h2>
 
-                <small>
-                    Bike: ₹20/hour<br>
-                    Car: ₹40/hour<br>
-                    SUV: ₹60/hour
-                </small>
-
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 
-    <!-- ================= HISTORY ================= -->
-    <section id="history" class="container history-section">
+    <div class="table-container">
 
-        <div class="section-title">
-            <p>YOUR ACTIVITY</p>
-            <h2>Booking History</h2>
-        </div>
+        <table>
 
-        <div class="table-container">
+            <thead>
 
-            <table>
+                <tr>
 
-                <thead>
-                    <tr>
-                        <th>Vehicle</th>
-                        <th>Type</th>
-                        <th>Slot</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Fee</th>
-                    </tr>
-                </thead>
+                    <th>
+                        Vehicle
+                    </th>
 
-                <tbody id="historyBody">
+                    <th>
+                        Type
+                    </th>
 
-                    <tr>
-                        <td colspan="6">
-                            No bookings yet.
-                        </td>
-                    </tr>
+                    <th>
+                        Slot
+                    </th>
 
-                </tbody>
+                    <th>
+                        Date
+                    </th>
 
-            </table>
+                    <th>
+                        Time
+                    </th>
 
-        </div>
+                    <th>
+                        Fee
+                    </th>
 
-    </section>
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
 
 
-    <!-- ================= ABOUT ================= -->
+            <tbody id="historyBody">
 
-    <section class="about">
+                <tr>
+
+                    <td colspan="7">
+
+                        No bookings yet.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about">
+
+    <div>
+
+        <p>
+            ABOUT SMARTPARK
+        </p>
+
+
+        <h2>
+
+            Parking smarter.
+
+            <br>
+
+            Living easier.
+
+        </h2>
+
+
+        <p>
+
+            SmartPark is a technology-based
+            parking management solution designed
+            to make parking faster, easier and
+            more convenient.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="features">
+
 
         <div>
-            <p>ABOUT SMARTPARK</p>
 
-            <h2>
-                Parking smarter.<br>
-                Living easier.
-            </h2>
+            📍
+
+            <h3>
+                Easy Finding
+            </h3>
 
             <p>
-                SmartPark is a technology-based parking management
-                solution designed to make parking faster, easier
-                and more convenient.
+                Find available parking
+                slots quickly.
             </p>
-        </div>
-
-        <div class="features">
-
-            <div>
-                📍
-                <h3>Easy Finding</h3>
-                <p>Find available parking slots quickly.</p>
-            </div>
-
-            <div>
-                ⚡
-                <h3>Fast Booking</h3>
-                <p>Reserve your parking slot easily.</p>
-            </div>
-
-            <div>
-                🔒
-                <h3>Smart Management</h3>
-                <p>Manage parking digitally.</p>
-            </div>
 
         </div>
 
-    </section>
+
+        <div>
+
+            ⚡
+
+            <h3>
+                Fast Booking
+            </h3>
+
+            <p>
+                Reserve your parking
+                slot easily.
+            </p>
+
+        </div>
 
 
-    <!-- ================= FOOTER ================= -->
+        <div>
 
-    <footer>
+            🔒
 
-        <h3>🚗 SmartPark</h3>
+            <h3>
+                Smart Management
+            </h3>
 
-        <p>
-            Smart Parking Solution Powered by Technology
-        </p>
+            <p>
+                Manage parking digitally.
+            </p>
 
-        <p>
-            Created by <strong>Om Jesur</strong>
-        </p>
-
-        <p class="copyright">
-            © 2026 SmartPark. All Rights Reserved.
-        </p>
-
-    </footer>
+        </div>
 
 
-    <script src="script.js"></script>
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h3>
+        🚗 SmartPark
+    </h3>
+
+    <p>
+        Smart Parking Solution
+        Powered by Technology
+    </p>
+
+    <p>
+        Created by
+        <strong>
+            Om Jesur
+        </strong>
+    </p>
+
+    <p class="copyright">
+
+        © 2026 SmartPark.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- MAIN JAVASCRIPT -->
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
