@@ -121,6 +121,202 @@
 
     </section>
 
+```html
+<!-- ================= SMART LOCATION ================= -->
+
+<section id="locations" class="container location-section">
+
+    <div class="section-title">
+        <p>SMART LOCATION</p>
+        <h2>Find Parking Near You</h2>
+    </div>
+
+    <div class="location-grid">
+
+        <div class="location-card">
+
+            <div class="location-icon">✈️</div>
+
+            <h3>Airport Parking</h3>
+
+            <p>Find parking near airport.</p>
+
+            <button
+                class="location-btn"
+                onclick="openLocation('Sardar Vallabhbhai Patel International Airport, Ahmedabad')">
+                📍 Open in Google Maps
+            </button>
+
+        </div>
+
+
+        <div class="location-card">
+
+            <div class="location-icon">🏬</div>
+
+            <h3>Mall Parking</h3>
+
+            <p>Find parking near shopping mall.</p>
+
+            <button
+                class="location-btn"
+                onclick="openLocation('Ahmedabad One Mall, Ahmedabad')">
+                📍 Open in Google Maps
+            </button>
+
+        </div>
+
+
+        <div class="location-card">
+
+            <div class="location-icon">🚉</div>
+
+            <h3>Railway Parking</h3>
+
+            <p>Find parking near railway station.</p>
+
+            <button
+                class="location-btn"
+                onclick="openLocation('Ahmedabad Railway Station')">
+                📍 Open in Google Maps
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- LIVE LOCATION -->
+
+    <div class="live-location">
+
+        <div>
+            <h3>📍 Use My Current Location</h3>
+
+            <p id="locationStatus">
+                Find nearby parking using your phone location.
+            </p>
+        </div>
+
+        <button
+            class="location-btn"
+            onclick="getCurrentLocation()">
+            Detect Location
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QR SCANNER ================= -->
+
+<section id="scanner" class="container scanner-section">
+
+    <div class="section-title">
+        <p>SMART SCANNER</p>
+        <h2>Scan Parking QR</h2>
+    </div>
+
+    <div class="scanner-card">
+
+        <div class="scanner-icon">
+            📱
+        </div>
+
+        <h3>Scan Parking QR Code</h3>
+
+        <p>
+            Scan your parking QR code using your phone camera.
+        </p>
+
+        <div id="qr-reader"></div>
+
+        <button
+            class="scan-btn"
+            onclick="startQRScanner()">
+            📷 Start Scanner
+        </button>
+
+        <p id="scanResult">
+            Scanner is ready.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section id="payment" class="container payment-section">
+
+    <div class="section-title">
+        <p>SMART PAYMENT</p>
+        <h2>Pay Parking Fee</h2>
+    </div>
+
+    <div class="payment-card">
+
+        <div class="phonepe-logo">
+            💜
+        </div>
+
+        <h3>PhonePe Payment</h3>
+
+        <p>
+            Complete your parking payment securely.
+        </p>
+
+        <div class="payment-amount">
+            ₹<span id="paymentAmount">0</span>
+        </div>
+
+        <button
+            class="phonepe-btn"
+            onclick="startPhonePePayment()">
+            💳 Pay with PhonePe
+        </button>
+
+        <div id="paymentStatus"
+             class="payment-status">
+            Payment not started
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING QR ================= -->
+
+<section id="bookingQR" class="container booking-qr-section">
+
+    <div class="section-title">
+        <p>DIGITAL PARKING PASS</p>
+        <h2>Your Booking QR</h2>
+    </div>
+
+    <div class="booking-qr-card">
+
+        <div id="bookingQRCode">
+            QR will appear after booking.
+        </div>
+
+        <h3 id="qrBookingText">
+            No active booking
+        </h3>
+
+        <button
+            class="scan-btn"
+            onclick="downloadBookingQR()">
+            📥 Save QR
+        </button>
+
+    </div>
+
+</section>
+```
 
     <!-- ================= BOOKING ================= -->
     <section id="booking" class="container">
